@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { TextField } from '@mui/material';
 
 interface TodoInputProps {
   addTodo: (text: string) => void;
@@ -16,10 +17,11 @@ const TodoInput: React.FC<TodoInputProps> = ({ addTodo }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Введите новую задачу"
+    <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
+      <TextField
+        fullWidth
+        label="Что нужно сделать?"
+        variant="outlined"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       />

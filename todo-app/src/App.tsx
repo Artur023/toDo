@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
+import { Container, Typography, Button, Grid } from '@mui/material';
 
 interface Todo {
   id: number;
@@ -34,16 +35,33 @@ const App: React.FC = () => {
   });
 
   return (
-    <div>
-      <h1>Список дел</h1>
+    <Container maxWidth="sm">
+      <Typography variant="h3" align="center" gutterBottom>
+        Список дел
+      </Typography>
+      
       <TodoInput addTodo={addTodo} />
       <TodoList todos={filteredTodos} toggleTodo={toggleTodo} />
-      <div>
-        <button onClick={() => setFilter('all')}>Все</button>
-        <button onClick={() => setFilter('active')}>Активные</button>
-        <button onClick={() => setFilter('completed')}>Выполненные</button>
-      </div>
-    </div>
+
+      {/* Контейнер для кнопок с отступами */}
+      <Grid container spacing={2} justifyContent="center" style={{ marginTop: '20px' }}>
+        <Grid item xs={4}>
+          <Button fullWidth variant="contained" onClick={() => setFilter('all')}>
+            Все
+          </Button>
+        </Grid>
+        <Grid item xs={4}>
+          <Button fullWidth variant="contained" onClick={() => setFilter('active')}>
+            Активные
+          </Button>
+        </Grid>
+        <Grid item xs={4}>
+          <Button fullWidth variant="contained" onClick={() => setFilter('completed')}>
+            Выполненные
+          </Button>
+        </Grid>
+      </Grid>
+    </Container>
   );
 };
 
