@@ -2,7 +2,7 @@
   "name": "todo-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Artur023.github.io/todo",
+  "homepage": "https://artur023.github.io/todo",
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
