@@ -15,11 +15,10 @@ interface TodoListProps {
 const TodoList: React.FC<TodoListProps> = ({ todos, toggleTodo }) => {
   return (
     <List>
-      {todos.map(todo => (
+      {todos.map((todo) => (
         <ListItem
           key={todo.id}
-          component="div"  
-          onClick={() => toggleTodo(todo.id)}
+          component="div"
           style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
         >
           <Checkbox
